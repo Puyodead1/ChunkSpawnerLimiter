@@ -3,18 +3,11 @@ package com.cyprias.ChunkSpawnerLimiter.compare;
 import org.bukkit.entity.*;
 
 
-public class MobGroupCompare implements EntityCompare {
-
-        private String mobGroup;
-
-        public MobGroupCompare(String mobGroup)
-        {
-                this.mobGroup = mobGroup;
-        }
+public record MobGroupCompare(String mobGroup) implements EntityCompare {
 
         @Override
         public boolean isSimilar(Entity entity) {
-                return (getMobGroup(entity) == this.mobGroup);
+                return (getMobGroup(entity).equals(this.mobGroup));
         }
 
         public static String getMobGroup(Entity entity) {
@@ -40,10 +33,10 @@ public class MobGroupCompare implements EntityCompare {
                 }
 
                 if (entity instanceof NPC) {
-                    // Villager
-                    return "NPC";
+                        // Villager
+                        return "NPC";
                 }
-                
+
                 // Anything else.
                 return "OTHER";
         }

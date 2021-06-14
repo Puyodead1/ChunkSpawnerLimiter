@@ -1,0 +1,8 @@
+name: ChunkSpawnerLimiter
+main: com.cyprias.ChunkSpawnerLimiter.Plugin
+authors:
+  - Cyprias
+  - Puyodead1
+description: Limit entities in a chunk.
+version: ${project.version}
+api-version: 1.17
