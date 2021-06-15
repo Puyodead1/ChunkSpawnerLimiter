@@ -2,11 +2,11 @@
 
 ## Credit Where Credit is Due
 
-This is a fork of the original plugin by Cyprias, which is aimed to be compatible with newer versions of Minecraft and to have some updated features, with the permission of Cyprias.
+This is a fork of the original plugin by Cyprias which can be found on [dev.bukkit.org](https://dev.bukkit.org/projects/chunkspawnerlimiter), which is aimed to be compatible with newer versions of Minecraft and to have some updated features. I have gotten Cyprias's permission to maintain my fork and upload to SpigotMC.
 
 ## Synopsis
 
-ChunkSpawnerLimiter limits the number of mobs a chunk can spawn.
+ChunkSpawnerLimiter limits the number of mobs a chunk can spawn. It can prevent spawn events if the chunk is at capacity, cull at certain intervals, and check when chunks are loaded/unloaded.
 
 Functionality:
 
@@ -163,3 +163,12 @@ messages:
 </details>
 
 The server will need to be restarted or /reloaded for changes to take effect.
+
+## Downloading
+It is important to note that there are 2 separate versions of this plugin, one if for 1.17+ (Java 16+), which the other is for versions before 1.17 (Java 8).
+
+- If you are running 1.17+, use the ChunkSpawnerLimiter-1.17 JAR
+- If you are running a version below 1.17, use the ChunkSpawnerLimiter-Legacy JAR
+
+## Other Info
+CSL's original source code is available [here](https://github.com/Cyprias/ChunkSpawnerLimiter). The plugin was made due to NoLagg and CraftBukkitPlusPlus not being able to limit mob spawners per chunk. (NoLagg limits globally and CB++ only limits wild mobs) 
