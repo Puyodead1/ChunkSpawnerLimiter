@@ -30,15 +30,8 @@ jobs:
       - name: Find and Move JARS
         run: "mv `find target -name *.jar -print` ./artifacts"
 
-      - name: Upload Artifact
-        if: success()
-        uses: actions/upload-artifact@master
-        with:
-          name: Artifacts
-          path: "./artifacts"
-
       - name: Upload to release
-        uses: JasonEtco/upload-to-release@master
+        uses: Puyodead1/upload-to-release@master
         with:
           args: './artifacts/ChunkSpawnerLimiter-*.jar'
         env:
