@@ -17,7 +17,7 @@
 			<vendor>adopt</vendor>
 		</provides>
 		<configuration>
-			<jdkHome>/opt/hostedtoolcache/Java_Adopt_jdk/jdk8u292+b10_openj9+0.26.0/x64</jdkHome>
+			<jdkHome>/opt/hostedtoolcache/Java_Adopt_jdk/8.0.292-1/x64</jdkHome>
 		</configuration>
 	</toolchain>
 </toolchains>
