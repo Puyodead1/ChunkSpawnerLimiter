@@ -2,7 +2,7 @@
 
 ## Credit Where Credit is Due
 
-This is a fork of the original plugin by Cyprias, which is aimed to be compatable with newer versions of Minecraft and to have some updated features, with the permission of Cyprias.
+This is a fork of the original plugin by Cyprias, which is aimed to be compatible with newer versions of Minecraft and to have some updated features, with the permission of Cyprias.
 
 ## Synopsis
 
