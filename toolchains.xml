@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF8"?>
 <toolchains>
-  <toolchain>
-	<type>jdk</type>
-	<provides>
-	  <version>16</version>
-	  <vendor>oracle</vendor>
-	</provides>
-	<configuration>
-	  <jdkHome>C:\Program Files\Java\jdk-16.0.1</jdkHome>
-	</configuration>
-  </toolchain>
-  <toolchain>
-	<type>jdk</type>
-	<provides>
-	  <version>1.8</version>
-	  <vendor>oracle</vendor>
-	</provides>
-	<configuration>
-	  <jdkHome>C:\Program Files\Java\jdk1.8.0_291</jdkHome>
-	</configuration>
-  </toolchain>
+	<toolchain>
+		<type>jdk</type>
+		<provides>
+			<version>16</version>
+			<vendor>adopt</vendor>
+		</provides>
+		<configuration>
+			<jdkHome>/opt/hostedtoolcache/Java_Adopt_jdk/16.0.1-9/x64</jdkHome>
+		</configuration>
+	</toolchain>
+	<toolchain>
+		<type>jdk</type>
+		<provides>
+			<version>1.8</version>
+			<vendor>adopt</vendor>
+		</provides>
+		<configuration>
+			<jdkHome>/opt/hostedtoolcache/Java_Adopt_jdk/jdk8u292+b10_openj9+0.26.0/x64</jdkHome>
+		</configuration>
+	</toolchain>
 </toolchains>
