@@ -39,7 +39,7 @@ public class EntityListener implements Listener {
 			for(Entity chunkEntity : c.getEntities()) {
 				if (chunkEntity instanceof Player && Config.getBoolean("properties.notify-players-spawn-cancelled")) {
 					// Notify any players in the chunk
-					ChatUtils.send(chunkEntity, Config.getString("messages.spawnCancelled").replace("%type%", entity.getType().name()));
+					ChatUtils.send(chunkEntity, Config.getString("messages.spawn-cancelled").replace("%type%", entity.getType().name()));
 				}
 			}
 		}

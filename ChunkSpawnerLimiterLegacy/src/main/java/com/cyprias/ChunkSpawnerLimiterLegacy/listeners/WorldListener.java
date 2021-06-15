@@ -1,10 +1,10 @@
-package com.cyprias.ChunkSpawnerLimiter.listeners;
+package com.cyprias.ChunkSpawnerLimiterLegacy.listeners;
 
-import com.cyprias.ChunkSpawnerLimiter.ChatUtils;
-import com.cyprias.ChunkSpawnerLimiter.Config;
-import com.cyprias.ChunkSpawnerLimiter.Logger;
-import com.cyprias.ChunkSpawnerLimiter.Plugin;
-import com.cyprias.ChunkSpawnerLimiter.compare.MobGroupCompare;
+import com.cyprias.ChunkSpawnerLimiterLegacy.ChatUtils;
+import com.cyprias.ChunkSpawnerLimiterLegacy.Config;
+import com.cyprias.ChunkSpawnerLimiterLegacy.Logger;
+import com.cyprias.ChunkSpawnerLimiterLegacy.Plugin;
+import com.cyprias.ChunkSpawnerLimiterLegacy.compare.MobGroupCompare;
 import org.bukkit.Chunk;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.HumanEntity;
@@ -18,7 +18,6 @@ import org.bukkit.scheduler.BukkitRunnable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
-import java.util.Objects;
 
 public class WorldListener implements Listener {
 	HashMap<Chunk, Integer> chunkTasks = new HashMap<>();
@@ -143,8 +142,9 @@ public class WorldListener implements Listener {
 
 					if (Config.getBoolean("properties.notify-players-remove")) {
 						for (int i = ents.length - 1; i >= 0; i--) {
-							if (ents[i] instanceof Player p) {
-								ChatUtils.send(p, Config.getString("messages.removedEntites").replace("%amount%", String.valueOf(entry.getValue().size() - limit)).replace("%type%", eType));
+							if (ents[i] instanceof Player) {
+								Player p = (Player)ents[i];
+								ChatUtils.send(p, Config.getString("messages.removed-entites").replace("%amount%", String.valueOf(entry.getValue().size() - limit)).replace("%type%", eType));
 							}
 						}
 					}
