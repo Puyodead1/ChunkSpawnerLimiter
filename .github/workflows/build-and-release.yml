@@ -16,7 +16,7 @@ jobs:
           distribution: "adopt"
           java-version: 16
       - name: Build with Maven
-        run: mvn -B package --file pom.xml
+        run: mvn --global-toolchains toolchains.xml -B package --file pom.xml
 
       - name: Run Helper
         id: helper
