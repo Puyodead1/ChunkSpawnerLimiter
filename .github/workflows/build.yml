@@ -31,7 +31,7 @@ jobs:
         run: "mkdir ./artifacts"
 
       - name: Find and Move JARS
-        run: "mv `find target -name *.jar -print` ./artifacts"
+        run: "mv `find . -name *.jar -print` ./artifacts"
 
       - name: Upload Artifact
         if: success()
