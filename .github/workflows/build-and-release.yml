@@ -27,24 +27,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Discord Success Message
-        if: success()
-        uses: appleboy/discord-action@master
-        with:
-          webhook_id: ${{ secrets.WEBHOOK_ID }}
-          webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
-          color: "#32cd32"
-          message: "**[${{ github.repository }} - Build ${{ github.run_id }}]**\n\nBuild Success!**\nChanges:\n${{ steps.helper.outputs.COMMIT_MESSAGE }}"
-
-      - name: Discord Failure Message
-        if: failure()
-        uses: appleboy/discord-action@master
-        with:
-          webhook_id: ${{ secrets.WEBHOOK_ID }}
-          webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
-          color: "#f70d1a"
-          message: "**[${{ github.repository }} - Build ${{ github.run_id }}]**\n\nBuild Failed!**\nChanges:\n${{ steps.helper.outputs.COMMIT_MESSAGE }}"
-
       - name: Make Artifact Directory
         run: "mkdir ./artifacts"
 
@@ -69,12 +51,11 @@ jobs:
           release_name: Build ${{ GITHUB_RUN_ID }}
           draft: false
           prerelease: false
-
-      - name: Discord Success Message
-        if: success()
-        uses: appleboy/discord-action@master
-        with:
-          webhook_id: ${{ secrets.WEBHOOK_ID }}
-          webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
-          color: "#32cd32"
-          message: "**[${{ github.repository }} - Build ${{ github.run_id }}]**\nNew Release!**\n\nChanges:\n${{ steps.helper.outputs.COMMIT_MESSAGE }}"
+          files: './artifacts/ChunkSpawnerLimiter-*.jar'
+          
+      - name: Discord Failure Message
+        if: failure()
+        uses: Ilshidur/action-discord@master
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          DISCORD_EMBEDS: ${{ toJSON("[{\"title\":\"New Release!\",\"url\":\"${{ steps.create_release.outputs.url }}\",\"description\":\"A new release has been published for ${{ github.repository }}\",\"color\":3329330,\"timestamp\":\"2021-06-15T00:22:23.172Z\",\"author\":{\"name\":\"${{ github.repository }}\"},\"fields\":[{\"name\":\"Build\",\"value\":\"${{ github.run_id }}\"},{\"name\":\"Changes\",\"value\":\"${{ steps.helper.outputs.COMMIT_MESSAGE }}\"}]}]") }}
