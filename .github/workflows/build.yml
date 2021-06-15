@@ -28,7 +28,7 @@ jobs:
           webhook_id: ${{ secrets.WEBHOOK_ID }}
           webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
           color: "#32cd32"
-          message: "**[${{ GITHUB_REPOSITORY }} - Build ${{ GITHUB_RUN_ID }}]**\n\nBuild Success!\nChanges:\n${{ steps.helper.outputs.COMMIT_MESSAGE }}"
+          message: "**[${{ env.GITHUB_REPOSITORY }} - Build ${{ env.GITHUB_RUN_ID }}]**\n\nBuild Success!\nChanges:\n${{ steps.helper.outputs.COMMIT_MESSAGE }}"
 
       - name: Discord Failure Message
         if: failure()
@@ -37,7 +37,7 @@ jobs:
           webhook_id: ${{ secrets.WEBHOOK_ID }}
           webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
           color: "#f70d1a"
-          message: "**[${{ GITHUB_REPOSITORY }} - Build ${{ GITHUB_RUN_ID }}]**\n\nBuild Failed!\nChanges:\n${{ steps.helper.outputs.COMMIT_MESSAGE }}"
+          message: "**[${{ env.GITHUB_REPOSITORY }} - Build ${{ env.GITHUB_RUN_ID }}]**\n\nBuild Failed!\nChanges:\n${{ steps.helper.outputs.COMMIT_MESSAGE }}"
 
       - name: Make Artifact Directory
         run: "mkdir ./artifacts"
