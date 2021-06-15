@@ -53,9 +53,11 @@ jobs:
           prerelease: false
           files: './artifacts/ChunkSpawnerLimiter-*.jar'
           
+      - id: set_json
+        run: echo "::set-output name=json::[{\"title\":\"New Release!\",\"url\":\"${{ steps.create_release.outputs.url }}\",\"description\":\"A new release has been published for ${{ github.repository }}\",\"color\":3329330,\"timestamp\":\"2021-06-15T00:22:23.172Z\",\"author\":{\"name\":\"${{ github.repository }}\"},\"fields\":[{\"name\":\"Build\",\"value\":\"${{ github.run_id }}\"},{\"name\":\"Changes\",\"value\":\"${{ steps.helper.outputs.COMMIT_MESSAGE }}\"}]}]"
       - name: Discord Failure Message
         if: failure()
         uses: Ilshidur/action-discord@master
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-          DISCORD_EMBEDS: ${{ toJSON([{\"title\":\"New Release!\",\"url\":\"${{ steps.create_release.outputs.url }}\",\"description\":\"A new release has been published for ${{ github.repository }}\",\"color\":3329330,\"timestamp\":\"2021-06-15T00:22:23.172Z\",\"author\":{\"name\":\"${{ github.repository }}\"},\"fields\":[{\"name\":\"Build\",\"value\":\"${{ github.run_id }}\"},{\"name\":\"Changes\",\"value\":\"${{ steps.helper.outputs.COMMIT_MESSAGE }}\"}]}]) }}
+          DISCORD_EMBEDS: ${{ toJSON(steps.set_json.outputs.json) }}
