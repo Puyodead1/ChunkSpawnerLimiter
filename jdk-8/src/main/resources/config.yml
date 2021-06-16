@@ -30,7 +30,7 @@ spawn-reasons:
   BUILD_IRONGOLEM: true # When an iron golem is spawned by being built
   BUILD_SNOWMAN: true # When a snowman is spawned by being built
   BUILD_WITHER: true # When a wither boss is spawned by being built
-  COMMNAD: true # When a creature is spawned by the "/summon" command
+  COMMAND: true # When a creature is spawned by the "/summon" command
   CURED: true # When a villager is cured from infection
   CUSTOM: true # When a creature is spawned by plugins
   DEFAULT: true # When an entity is missing a SpawnReason

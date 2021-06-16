@@ -88,7 +88,7 @@ spawn-reasons:
   BUILD_IRONGOLEM: true # When an iron golem is spawned by being built
   BUILD_SNOWMAN: true # When a snowman is spawned by being built
   BUILD_WITHER: true # When a wither boss is spawned by being built
-  COMMNAD: true # When a creature is spawned by the "/summon" command
+  COMMAND: true # When a creature is spawned by the "/summon" command
   CURED: true # When a villager is cured from infection
   CUSTOM: true # When a creature is spawned by plugins
   DEFAULT: true # When an entity is missing a SpawnReason
@@ -209,10 +209,14 @@ messages:
   removed-entites: "&7Removed %amount% %type% in your chunk."
   spawn-cancelled: "&7Cancelled spawn event for %type% in your chunk."
 ```
-
 </details>
 
 The server will need to be restarted or /reloaded for changes to take effect.
+
+## Issues
+Issues can be reported in the [GitHub](https://github.com/Puyodead1/ChunkSpawnerLimiter/issues/new).
+
+If you find a bug, please check the [Issues](https://github.com/Puyodead1/ChunkSpawnerLimiter/issues) to make sure it isn't already reported.
 
 ## Other Info
 CSL's original source code is available [here](https://github.com/Cyprias/ChunkSpawnerLimiter). The plugin was made due to NoLagg and CraftBukkitPlusPlus not being able to limit mob spawners per chunk. (NoLagg limits globally and CB++ only limits wild mobs).

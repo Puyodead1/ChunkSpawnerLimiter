@@ -6,7 +6,7 @@
     <artifactId>ChunkSpawnerLimiter</artifactId>
     <name>ChunkSpawnerLimiter</name>
     <description>Limit entities in chunks.</description>
-    <version>3.0.7</version>
+    <version>3.0.8</version>
     <packaging>pom</packaging>
 
     <modules>
