@@ -46,7 +46,7 @@ None
   - notify-players-spawn-cancelled: Notify players within the chunk when an entity spawn has been cancelled.
   - preserve-named-entities: Prioritize entities without names over older entities.
 - spawn-reasons: List of spawn reasons to cull on.
-- entities :List of mob groups and mobs to cull and their max limits.
+- entities: List of mob groups and mobs to cull and their max limits.
 - excluded-worlds: Worlds to exclude mob limits in.
 - messages:
   - removed-entities: The message sent to players in the chunk when its culled.
