@@ -1,5 +1,15 @@
 # ChunkSpawnLimiter
 
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/designed-in-ms-paint.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/made-with-java.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/approved-by-george-costanza.svg)](https://forthebadge.com)
+![GitHub forks](https://img.shields.io/github/forks/Puyodead1/ChunkSpawnerLimiter?style=for-the-badge)
+![GitHub Repo stars](https://img.shields.io/github/stars/Puyodead1/ChunkSpawnerLimiter?style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/Puyodead1/ChunkSpawnerLimiter?style=for-the-badge)
+
+[![Discord Banner 2](https://discordapp.com/api/guilds/589200717277954093/widget.png?style=banner2)](https://discord.gg/tMzrSxQ)
+
 ## Credit Where Credit is Due
 
 This is a fork of the original plugin by Cyprias which can be found on [dev.bukkit.org](https://dev.bukkit.org/projects/chunkspawnerlimiter), which is aimed to be compatible with newer versions of Minecraft and to have some updated features. I have gotten Cyprias's permission to maintain my fork and upload to SpigotMC.
@@ -205,4 +215,6 @@ messages:
 The server will need to be restarted or /reloaded for changes to take effect.
 
 ## Other Info
-CSL's original source code is available [here](https://github.com/Cyprias/ChunkSpawnerLimiter). The plugin was made due to NoLagg and CraftBukkitPlusPlus not being able to limit mob spawners per chunk. (NoLagg limits globally and CB++ only limits wild mobs) 
+CSL's original source code is available [here](https://github.com/Cyprias/ChunkSpawnerLimiter). The plugin was made due to NoLagg and CraftBukkitPlusPlus not being able to limit mob spawners per chunk. (NoLagg limits globally and CB++ only limits wild mobs).
+
+The SpigotMC resource can be found [here](https://www.spigotmc.org/resources/chunkspawnerlimiter.93337/).
