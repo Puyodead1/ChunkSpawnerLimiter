@@ -9,7 +9,7 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <name>${parent.artifactId}-JDK16</name>
+    <name>${project.parent.artifactId}-JDK16</name>
     <artifactId>jdk-16</artifactId>
 
     <properties>
