@@ -7,23 +7,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set up JDK 8
-        uses: actions/setup-java@v2
-        with:
-          distribution: "adopt"
-          java-version: '8.0.292+1'
 
-      - name: Maven Build JDK8
-        run: mvn --global-toolchains toolchains.xml -B package --file pom.xml
-
-      - uses: actions/checkout@v2
       - name: Set up JDK 16
         uses: actions/setup-java@v2
         with:
           distribution: "adopt"
           java-version: '16.0.1+9'
 
-      - name: Maven Build JDK16
+      - name: Set up JDK 8
+        uses: actions/setup-java@v2
+        with:
+          distribution: "adopt"
+          java-version: '8.0.292+1'
+
+      - name: Build with Maven
         run: mvn --global-toolchains toolchains.xml -B package --file pom.xml
 
       - name: Run Helper
