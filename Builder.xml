@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="ChunkSpawnerLimiter" default="Build">
+  <xmlproperty file="pom.xml" prefix="pom" />
+  
+  <property file="Builder.properties"/>
+  <property name="pom.project.version" value="${pom.project.version}"/>
+
+  <target name="Build">
+    <jar jarfile="C:\Users\23562\Desktop\Plugin Test Server\1.17\plugins\${ant.project.name}-${pom.project.version}.jar" basedir="./target/classes/" includes="**/*" />
+  </target>
+</project>

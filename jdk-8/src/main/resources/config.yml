@@ -1,51 +1,3 @@
-# ChunkSpawnLimiter
-
-## Credit Where Credit is Due
-
-This is a fork of the original plugin by Cyprias which can be found on [dev.bukkit.org](https://dev.bukkit.org/projects/chunkspawnerlimiter), which is aimed to be compatible with newer versions of Minecraft and to have some updated features. I have gotten Cyprias's permission to maintain my fork and upload to SpigotMC.
-
-## Synopsis
-
-ChunkSpawnerLimiter limits the number of mobs a chunk can spawn. It can prevent spawn events if the chunk is at capacity, cull at certain intervals, and check when chunks are loaded/unloaded.
-
-Functionality:
-
-- Limit the number of mobs in chunks.
-- Limit specific mobs (zombie, spider, etc) or groups (monster, animal).
-- Cull on chunk load.
-- Cull on chunk unload.
-- Periodic chunk culling.
-- Check Surrounding chunks for mobs.
-
-## Permissions and Commands
-
-None
-
-## Configuration
-
-- properties
-  - debug-messages: Show debug messages in console.
-  - check-chunk-load: Check chunk upon load.
-  - check-chunk-unload: Check chunk upon unload.
-  - watch-creature-spawns: Check chunk upon mob spawn.
-  - prevent-creature-spawns: Prevent new spawns rather than cull older entities until cap is hit.
-  - check-surrounding-chunks: Check surrounding chunks.
-  - active-inspections: Periodically recheck loaded chunks.
-  - inspection-frequency: How often to inspect a chunk.
-  - notify-players-remove: Notify players within the chunk when it's culled.
-  - notify-players-spawn-cancelled: Notify players within the chunk when an entity spawn has been cancelled.
-  - preserve-named-entities: Prioritize entities without names over older entities.
-- spawn-reasons: List of spawn reasons to cull on.
-- entities :List of mob groups and mobs to cull and their max limits.
-- excluded-worlds: Worlds to exclude mob limits in.
-- messages:
-  - removed-entities: The message sent to players in the chunk when its culled.
-  - spawn-cancelled: The message sent to players in the chunk when an entity spawn is cancelled.
-
-<details>
-    <summary>Click to expand default config</summary>
-
-```yaml
 config-version: 1.2
 properties:
   # Show debug messages.
@@ -198,11 +150,3 @@ excluded-worlds: []
 messages:
   removed-entites: "&7Removed %amount% %type% in your chunk."
   spawn-cancelled: "&7Cancelled spawn event for %type% in your chunk."
-```
-
-</details>
-
-The server will need to be restarted or /reloaded for changes to take effect.
-
-## Other Info
-CSL's original source code is available [here](https://github.com/Cyprias/ChunkSpawnerLimiter). The plugin was made due to NoLagg and CraftBukkitPlusPlus not being able to limit mob spawners per chunk. (NoLagg limits globally and CB++ only limits wild mobs) 
