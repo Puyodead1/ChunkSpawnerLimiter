@@ -6,3 +6,5 @@ target/
 .vscode/
 artifacts/
 *.iml
+Builder.xml
+Builder.properties

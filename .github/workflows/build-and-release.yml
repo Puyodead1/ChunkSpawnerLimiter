@@ -11,12 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set up JDK 16
-        uses: actions/setup-java@v2
-        with:
-          distribution: "adopt"
-          java-version: '16.0.1+9'
-
       - name: Set up JDK 8
         uses: actions/setup-java@v2
         with:
@@ -24,19 +18,19 @@ jobs:
           java-version: '8.0.292+1'
 
       - name: Build with Maven
-        run: mvn --global-toolchains toolchains.xml -B package --file pom.xml
+        run: mvn -B package --file pom.xml
 
       - name: Run Helper
         id: helper
         run: "chmod +x ./.github/release-helper && bash ./.github/release-helper"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
++
       - name: Make Artifact Directory
         run: "mkdir ./artifacts"
 
       - name: Find and Move JARS
-        run: "mv `find . -name ChunkSpawnerLimiter-*.jar -print` ./artifacts"
+        run: "mv `find ./target -name ChunkSpawnerLimiter-*.jar -print` ./artifacts"
 
       - name: Upload to release
         uses: Puyodead1/upload-to-release@master
